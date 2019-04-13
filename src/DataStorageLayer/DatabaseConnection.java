@@ -7,10 +7,11 @@ public class DatabaseConnection {
     private static Connection databaseConnection;
     private static Statement databaseStatement;
     private static ResultSet databaseResultSet;
+    private static DatabaseConnection instance;
 
 
 
-    public static void connect(){
+    public static Connection connect(){
         String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=NetflixStatistics;integratedSecurity=true;";
 
         try {
@@ -25,6 +26,7 @@ public class DatabaseConnection {
     } catch(Exception exception) {
         exception.printStackTrace();
         }
+        return databaseConnection;
     }
 
     // Disconnecting from the database
@@ -84,5 +86,12 @@ public class DatabaseConnection {
             exception.printStackTrace();
         }
         return databaseResultSet;
+    }
+
+    public static DatabaseConnection getInstance(){
+        if(instance == null){
+            instance = new DatabaseConnection();
+        }
+        return instance;
     }
 }
