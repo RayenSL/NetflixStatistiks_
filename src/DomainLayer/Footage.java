@@ -7,7 +7,7 @@ public class Footage {
     private Genre genre;
     private Language language;
 
-    public Footage(int itemId, String title, int ageChecker, Genre genre, Language language) {
+    public Footage(int itemId, String title, Genre genre, Language language, int ageChecker) {
         setItemId(itemId);
         setTitle(title);
         setGenre(genre);
@@ -43,12 +43,20 @@ public class Footage {
         return genre;
     }
 
+    public String getGenreString(){
+        return String.valueOf(getGenre());
+    }
+
     public void setGenre(Genre genre) {
         this.genre = genre;
     }
 
     public Language getLanguage() {
         return language;
+    }
+
+    public String getLanguageString(){
+        return String.valueOf(getLanguage());
     }
 
     public void setLanguage(Language language) {
