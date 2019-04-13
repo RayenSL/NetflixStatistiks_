@@ -4,9 +4,10 @@ public class Serie extends Footage {
 
     private String Similar;
 
-    public Serie(int itemId, String title, int ageChecker, Genre genre, Language language) {
-        super(itemId, title, ageChecker, genre, language);
+    public Serie(int itemId, String title, Genre genre, Language language, int ageChecker) {
+        super(itemId, title, genre, language, ageChecker);
     }
+
 
     public String getSimilar() {
         return Similar;

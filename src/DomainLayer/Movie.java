@@ -4,11 +4,11 @@ public class Movie extends Footage {
 
     private String duration;
 
-
-    public Movie(int itemId, String title, int ageChecker, Genre genre, Language language) {
-        super(itemId, title, ageChecker, genre, language);
-
+    public Movie(int itemId, String title, String duration, Genre genre, Language language, int ageChecker) {
+        super(itemId, title, genre, language, ageChecker);
+        setDuration(duration);
     }
+
 
     public String getDuration() {
         return duration;
