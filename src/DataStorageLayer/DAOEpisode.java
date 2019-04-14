@@ -8,24 +8,24 @@ public class DAOEpisode {
 
     ResultSet resultSet;
 
-    // Query's Defined
+    // String matching the Database Query's
     private static final String TABLE = "Episode";
-
     public static final String TITLE = "Title";
     public static final String DURATION = "Duration";
     public static final String SERIE_ID = "SerieID";
     public static final String EPIDODE_ID = "EpisodeID";
 
-    // Returns all Episodes
+    // Returns all Episodes as a String
     public static String getEpisodes() {
         return "SELECT * FROM " + TABLE;
     }
 
-    // Returns Episode with the Serie - ID
+    // Returns Episode with the Serie - ID as a String
     public static String getEpisodeSerieId(int serieId) {
         return "SELECT * FROM " + TABLE + " WHERE " + serieId + " = " + serieId;
     }
 
+    // Getting the Episodes with the database Connection
     public HashMap<Integer, HashMap<String, String>> hashMapforAllEpisodes() {
         HashMap<Integer, HashMap<String, String>> hashMapHashMap = new HashMap<>();
 
@@ -52,6 +52,7 @@ public class DAOEpisode {
     }
 
 
+    // Updating the Episode
     public boolean update_Episode(String query) {
         boolean isSaved = false;
 
