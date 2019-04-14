@@ -7,8 +7,8 @@ public class DAOSerie {
 
         private ResultSet resultSet;
 
+        // Query's defined
         private static final String TABLE = "Serie";
-
         public static final String TITLE = "Title";
         public static final String SERIE_ID = "SerieID";
         public static final String DURATION = "Duration";
@@ -40,7 +40,7 @@ public class DAOSerie {
         }
         return isSaved;
     }
-
+    // Putting data from the database in Hashmap
     public HashMap<Integer, HashMap<String, String>> getAllSeriesHashmap() {
         HashMap<Integer, HashMap<String, String>> hashMapHashMap = new HashMap<>();
 
