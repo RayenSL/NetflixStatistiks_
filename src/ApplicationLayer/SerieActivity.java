@@ -1,4 +1,4 @@
-package PresentationLayer.Activity;
+package ApplicationLayer;
 
 import DataStorageLayer.DAOEpisode;
 import DataStorageLayer.DAOMovie;
@@ -16,27 +16,25 @@ import java.util.HashMap;
 
 public class SerieActivity extends Activity {
 
+    // Adding Attributes11
     private JComboBox<Integer> jComboBox = new JComboBox<>();
-
     private JLabel jLabelSerieID = new JLabel("Select Serie ID:");
     private JLabel jLabelTitle = new JLabel("Title:");
     private JLabel jLabelGenre = new JLabel("Genre:");
     private JLabel jLabelLanguage = new JLabel("Language:");
     private JLabel jLabelAgeIndication = new JLabel("Age Indication:");
-
     private JTextField jTextFieldTitle = new JTextField();
     private JTextField jTextFieldGenre = new JTextField();
     private JTextField jTextFieldLanguage = new JTextField();
     private JTextField jTextFieldAgeIndication = new JTextField();
-
     private JComboBox<Integer> jComboBoxEpisode = new JComboBox<>();
     private JLabel jLabelEpisodeID = new JLabel("Select Episode ID:");
     private JLabel jLabelEpisodeTitle = new JLabel("Episode Title:");
     private JLabel jLabelEpisodeDuration = new JLabel("Duration:");
-
     private JTextField jTextFieldEpisodeTitle = new JTextField();
     private JTextField jTextFieldEpisodeDuration = new JTextField();
 
+    // Constructor
     public SerieActivity(JPanel mainPanel, CardLayout cardLayout) {
         super(mainPanel, cardLayout, new GridLayout(9, 2));
         loadData();
@@ -44,6 +42,7 @@ public class SerieActivity extends Activity {
         addPageGUI();
     }
 
+    // Adding Listeners
     @Override
     protected void addPageGUI() {
 
