@@ -6,13 +6,14 @@ import java.util.HashMap;
 public class DAOProfile {
     private ResultSet resultSet;
 
+    // Attributes defined
     private static final String TABLE = "Profile";
-
     public static final String ACCOUNT_ID = "AccountID";
     public static final String PROFILE_ID = "ProfileID";
     public static final String NAME = "ProfileName";
     public static final String DATE_OF_BIRTH = "DateOfBirth";
 
+    // Getting query's returns Strings
     public static String getAllProfiles() {
         return "SELECT * FROM " + TABLE;
     }
@@ -44,6 +45,27 @@ public class DAOProfile {
                 + " AND " + PROFILE_ID + " = " + ProfileID + ";";
     }
 
+    public int getLatestProfileID() {
+        int dbProfile = 0;
+        try {
+            resultSet = DatabaseConnection.getStatementResult(getLatestProfile());
+
+            if (resultSet.next()) {
+
+                dbProfile = resultSet.getInt(PROFILE_ID);
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return dbProfile;
+        }
+
+        return dbProfile;
+    }
+
+
+    // Putting data from the database in Hashmap
     public HashMap<Integer, HashMap<String, String>> getAllProfilesInHashmap() {
         HashMap<Integer, HashMap<String, String>> hashMap = new HashMap<>();
 
@@ -82,5 +104,14 @@ public class DAOProfile {
         }
         return isSaved;
     }
+
+    public static String insertProfile(int AccountID, String ProfileName, String DateOfBirth) {
+        return "INSERT INTO " + TABLE +
+                " VALUES("
+                + "'" + ProfileName + "', "
+                + "'" + DateOfBirth + "', "
+                + "'" + AccountID + "')" + ";";
+    }
+
 
 }
