@@ -6,7 +6,7 @@ public enum Language {
     ENGLISH,
     FRENCH,
     HINDI,
-    PORTUGESE,
+    PORTUGUESE,
     SPANISH,
     URDU,
 
