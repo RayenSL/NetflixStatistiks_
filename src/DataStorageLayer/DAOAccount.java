@@ -73,7 +73,7 @@ public class DAOAccount {
 
                 stringStringHashMap.put(DAOAccount.NAME, resultSet.getString(DAOAccount.NAME));
                 stringStringHashMap.put(DAOAccount.STREETNAME, resultSet.getString(DAOAccount.STREETNAME));
-                stringStringHashMap.put(DAOAccount.HOUSENUMBER, resultSet.getString(DAOAccount.HOUSENUMBERADDITION));
+                stringStringHashMap.put(DAOAccount.HOUSENUMBER, resultSet.getString(DAOAccount.HOUSENUMBER));
                 stringStringHashMap.put(DAOAccount.HOUSENUMBERADDITION, resultSet.getString(DAOAccount.HOUSENUMBERADDITION));
                 stringStringHashMap.put(DAOAccount.POSTALCODE, resultSet.getString(DAOAccount.POSTALCODE));
                 stringStringHashMap.put(DAOAccount.CITY, resultSet.getString(DAOAccount.CITY));
