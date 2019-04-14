@@ -13,6 +13,7 @@ public class DatabaseConnection {
 
     public static Connection connect(){
         String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=NetflixStatistics;integratedSecurity=true;";
+//        String connectionUrl = "jdbc:sqlserver://localhost\\SQLEXPRESS;databaseName=NetflixStatistics;integratedSecurity=true;";
 
         try {
         // Importing SQL driver
@@ -73,19 +74,19 @@ public class DatabaseConnection {
     }
 
     // Creating new statement. The result is returned afterwarths
-    public static ResultSet getStatementResult(String statement) {
-        ResultSet result;
+    public static ResultSet getStatementResult(String providedStatement) {
+        Statement statement;
+        ResultSet resultSet;
 
         try {
-            databaseStatement = databaseConnection.createStatement();
-
-            result = databaseStatement.executeQuery(statement);
-
-
-        } catch (Exception exception) {
-            exception.printStackTrace();
+            statement = databaseConnection.createStatement();
+            // Parse statement to SQL
+            resultSet = statement.executeQuery(providedStatement);
+            return resultSet;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
-        return databaseResultSet;
     }
 
     public static DatabaseConnection getInstance(){
