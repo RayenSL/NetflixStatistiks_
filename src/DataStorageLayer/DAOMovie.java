@@ -11,15 +11,16 @@ public class DAOMovie {
 
     private ResultSet resultSet;
 
+    // Attributes defined
     private static final String TABLE = "Movie";
+    public static final String TITLE = "Title";
+    public static final String MOVIE_ID = "MovieID";
+    public static final String DURATION = "Duration";
+    public static final String LANGUAGE = "Language";
+    public static final String GENRE = "Genre";
+    public static final String Age_Indication = "AgeIndication";
 
-    private static final String TITLE = "Title";
-    private static final String MOVIE_ID = "MovieID";
-    private static final String DURATION = "Duration";
-    private static final String LANGUAGE = "Language";
-    private static final String GENRE = "Genre";
-    private static final String Age_Indication = "AgeIndication";
-
+    // returning query's as String
     public static String getMovies() {
         return "SELECT * FROM " + TABLE;
     }
@@ -36,11 +37,13 @@ public class DAOMovie {
         return "SELECT TOP 1 * FROM " + TABLE + " WHERE " + Age_Indication + " > '16' ORDER BY " + DURATION + " DESC";
     }
 
+    // Making connection with help of the String
     public HashMap<Integer, HashMap<String, String>> getAllMoviesHashmap() {
         HashMap<Integer, HashMap<String, String>> hashMap = new HashMap<>();
 
         try {
             resultSet = DatabaseConnection.getStatementResult(getMovies());
+            System.out.println(resultSet);
 
             while (resultSet.next()) {
 
