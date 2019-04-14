@@ -6,7 +6,7 @@ public class Profile {
     private int itemId;
     private String dOB;
 
-    public Profile(int profileId, String profileName, int itemId, String dOB) {
+    public Profile(int itemId, int profileId, String profileName, String dOB) {
         setProfileId(profileId);
         setProfileName(profileName);
         setItemId(itemId);

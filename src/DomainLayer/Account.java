@@ -5,12 +5,12 @@ public class Account {
     private int accountId;
     private String name;
     private String street;
-    private int housenumber;
+    private String housenumber;
     private String housenumberadd;
     private String postalcode;
     private String city;
 
-    public Account(int accountId, String name, String street, int housenumber, String housenumberadd, String postalcode, String city) {
+    public Account(int accountId, String name, String street, String housenumber, String housenumberadd, String postalcode, String city) {
         setAccountId(accountId);
         setName(name);
         setStreet(street);
@@ -44,11 +44,11 @@ public class Account {
         this.street = street;
     }
 
-    public int getHousenumber() {
+    public String getHousenumber() {
         return housenumber;
     }
 
-    public void setHousenumber(int housenumber) {
+    public void setHousenumber(String housenumber) {
         this.housenumber = housenumber;
     }
 
