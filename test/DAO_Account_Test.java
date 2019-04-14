@@ -15,7 +15,7 @@ public class DAO_Account_Test {
     void getLatestAccount() {
         int DAOaccountid = 0;
         DatabaseConnection.connect();
-        
+
         try {
 
             resultSet = DatabaseConnection.getStatementResult(DAOAccount.getMostRecentAccount());
